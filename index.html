@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner: Betätigungskraft an Brandschutztüren</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-container">
+            <h1>Rechner für die Betätigungskraft an Türen</h1>
+            <button id="resetButton">Auf Standardwerte zurücksetzen</button>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="doorWidth">Türbreite</label>
+                <div class="slider-container">
+                    <input type="range" id="doorWidth" min="1" max="500" value="100" step="1">
+                    <input type="number" id="doorWidthValue" min="1" max="500" value="100"> <span>cm</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="doorHeight">Türhöhe</label>
+                <div class="slider-container">
+                    <input type="range" id="doorHeight" min="1" max="500" value="200" step="1">
+                    <input type="number" id="doorHeightValue" min="1" max="500" value="200"> <span>cm</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="diffPressure">Differenzdruck (RDA)</label>
+                <div class="slider-container">
+                    <input type="range" id="diffPressure" min="0" max="300" value="50" step="1">
+                    <input type="number" id="diffPressureValue" min="0" max="300" value="50"> <span>Pa</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="correctionFactor">Korrekturfaktor (für Türschließer etc.)</label>
+                <div class="slider-container">
+                    <input type="range" id="correctionFactor" min="0" max="100" value="15" step="1">
+                    <input type="number" id="correctionFactorValue" min="0" max="100" value="15"> <span>%</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>Ergebnis</h2>
+        <div class="output-section">
+            <div id="result" class="result-box ok"></div>
+            <div class="result-label">Erforderliche Betätigungskraft</div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div id="doorArea" class="value"></div>
+                    <div class="label">Gesamtfläche der Tür</div>
+                </div>
+                <div class="detail-item">
+                    <div id="pressureDisplay" class="value"></div>
+                    <div class="label">Differenzdruck</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="info-text">
+            Hinweis: Laut DIN EN 12101-6 darf die maximale Betätigungskraft an Türen zu druckbelüfteten Bereichen (RDA) <strong>100 N</strong> nicht überschreiten, um eine sichere Flucht zu gewährleisten.
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
