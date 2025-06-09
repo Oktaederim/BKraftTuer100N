@@ -43,7 +43,14 @@ function calculate() {
     const pressureMmWs = pressurePa / 9.80665;
 
     resultDisplay.textContent = `${totalForce.toFixed(1)} N`;
-    doorAreaDisplay.textContent = `${areaM2.toFixed(2)} m²`;
+    
+    // Dynamische Formatierung für die Fläche
+    if (areaM2 > 0 && areaM2 < 0.01) {
+        doorAreaDisplay.textContent = `${areaM2.toFixed(4)} m²`;
+    } else {
+        doorAreaDisplay.textContent = `${areaM2.toFixed(2)} m²`;
+    }
+
     pressureDisplay.textContent = `${pressurePa.toFixed(0)} Pa / ${pressureMmWs.toFixed(1)} mmWS`;
     
     resultDisplay.classList.remove('ok', 'warn', 'danger');
