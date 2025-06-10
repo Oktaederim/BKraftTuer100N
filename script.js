@@ -26,7 +26,7 @@ const defaultValues = {
     width: 100,
     height: 200,
     pressure: 50,
-    correction: 15
+    correction: 0
 };
 
 function calculate() {
